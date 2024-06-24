@@ -29,8 +29,10 @@ const ImageSrc = styled('span')({
     right: 0,
     top: 0,
     bottom: 0,
+    marginTop: "3px",
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
+    borderRadius: "8px"
 })
 
 const ImageBase = styled('span')(() => ({

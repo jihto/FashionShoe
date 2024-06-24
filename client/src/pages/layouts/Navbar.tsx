@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const gridRef = useRef<HTMLDivElement>(null);
     const handleHover = (event: MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
+        setAnchorEl(prev => prev ? null : event.currentTarget);
     }; 
     const handleClose = () => {
     setAnchorEl(null);
@@ -28,8 +28,7 @@ const Navbar: React.FC = () => {
                         color="white" 
                         gap={1}
                         bgcolor="#69afbf"
-                        onMouseEnter={handleHover}
-                        onMouseLeave={handleClose}
+                        onClick={handleHover}
                     >
                         <MenuIcon /> 
                         <Typography variant="h6">Danh mục sản phẩm</Typography> 

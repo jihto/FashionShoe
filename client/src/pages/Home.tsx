@@ -50,23 +50,10 @@ const Home: React.FC = () => {
             </Paper> 
             {/* Sub Banner */}
             <Box>
-                <Grid container display={"flex"}> 
+                <Grid container display={"flex"} gap={"5px"}> 
                     <Each 
                         of={[1,2,3]}
-                        render={() => (
-                            // <Grid item md={4}>  
-                            //     <Paper elevation={3}> 
-                            //         <Grid display={"grid"} paddingY={5} justifyItems={"center"} alignContent={"center"}> 
-                            //             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            //                 Giày Nike
-                            //             </Typography> 
-                            //             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            //                 Các mẫu giày mới nhất 
-                            //             </Typography> 
-                            //         <Button variant='outlined'>Shop now</Button>
-                            //         </Grid> 
-                            //     </Paper>
-                            // </Grid>
+                        render={() => (  
                             <ImageButton
                                 focusRipple
                                 key="image" 
