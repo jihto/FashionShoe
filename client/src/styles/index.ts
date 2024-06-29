@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     overflow: 'auto',
     padding: '1px',
     bgcolor: 'whitesmoke',
+    overflowX: 'hidden',
     '&::-webkit-scrollbar': {
       height: '8px',
       backgroundColor: '#f5f5f5',

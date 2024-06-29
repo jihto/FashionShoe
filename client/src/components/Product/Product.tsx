@@ -32,6 +32,7 @@ const Product: React.FC<ProductProps> = ({ imageUrl, label }) => {
           href='product/Nike Air Max'
           gutterBottom
           variant='body2'
+          sx={{ textDecoration: 'none' }}
         >
           {label}
         </Link>

@@ -1,8 +1,12 @@
 import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
-import AdbIcon from '@mui/icons-material/Adb';
 
-const Branch: React.FC = () => {
+interface BranchProps {
+  imageUrl: string;
+  label: string;
+}
+
+const Branch: React.FC<BranchProps> = ({ imageUrl, label }) => {
   return (
     <Paper sx={{ margin: '3px' }}>
       <Grid
@@ -20,9 +24,13 @@ const Branch: React.FC = () => {
           paddingY={2}
           paddingX={2}
         >
-          <AdbIcon />
+          <img
+            src={imageUrl}
+            alt='logo'
+            style={{ width: '50px', height: '50px' }}
+          />
         </Grid>
-        <Typography>Branch</Typography>
+        <Typography justifySelf='center'>{label}</Typography>
       </Grid>
     </Paper>
   );

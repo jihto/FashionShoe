@@ -30,6 +30,19 @@ import {
 import Line from '../components/common/Line';
 import { products } from '../constant/data';
 
+import AdidasLogo from '../assets/public/logo-adidas.jpg';
+import ConverseLogo from '../assets/public/logo-converse.jpg';
+import DiorLogo from '../assets/public/logo-dior.jpg';
+import GucciLogo from '../assets/public/logo-gucci.jpg';
+import LVLogo from '../assets/public/logo-lv.jpg';
+import McQueenLogo from '../assets/public/logo-mcqueen.jpg';
+import MLBLogo from '../assets/public/logo-mlb.jpg';
+import BalenciagaLogo from '../assets/public/logo-balenciaga.jpg';
+import NBLogo from '../assets/public/logo-nb.jpg';
+import NikeLogo from '../assets/public/logo-nike.jpg';
+import PumaLogo from '../assets/public/logo-puma.jpg';
+import VansLogo from '../assets/public/logo-vans.jpg';
+
 const Home: React.FC = () => {
   const classes = useStyles();
   const [banner, setBanner] = useState<number>(0);
@@ -47,9 +60,29 @@ const Home: React.FC = () => {
       scrollContainerRef.current.scrollLeft += scrollOffset;
     }
   };
+
+  const images = [
+    'https://ae01.alicdn.com/kf/S4cdf6becae2d4c78923e432efe7ff2f2a/Men-Casual-Shoes-Sport-Sneakers-Durable-Outsole-New-Fashion-Running-Shoes-Men-s-Sneakers-Mesh-Breathable.jpg',
+    'https://img.ltwebstatic.com/images3_spmp/2023/10/22/d8/1697948674af823dc489b4267ee9a01f34ab809ca9.webp',
+    'https://image.made-in-china.com/2f0j00yvpisBodygzj/New-Fashion-Shoes-Men-Breathable-Trend-Men-Style-Brand-Wholesale-Couple-Running-Sports-Fashion-Trending-Sneaker.webp',
+  ];
+
+  const logos = [
+    { imageUrl: AdidasLogo, label: 'Adidas' },
+    { imageUrl: BalenciagaLogo, label: 'Balenciaga' },
+    { imageUrl: ConverseLogo, label: 'Converse' },
+    { imageUrl: DiorLogo, label: 'Dior' },
+    { imageUrl: GucciLogo, label: 'Gucci' },
+    { imageUrl: LVLogo, label: 'LV' },
+    { imageUrl: McQueenLogo, label: 'McQueen' },
+    { imageUrl: MLBLogo, label: 'MLB' },
+    { imageUrl: NBLogo, label: 'NB' },
+    { imageUrl: NikeLogo, label: 'Nike' },
+    { imageUrl: PumaLogo, label: 'Puma' },
+    { imageUrl: VansLogo, label: 'Vans' },
+  ];
   return (
     <>
-      {/* Banner */}
       <Paper
         elevation={3}
         className={classes.banner}
@@ -86,12 +119,14 @@ const Home: React.FC = () => {
         >
           <Each
             of={[1, 2, 3]}
-            render={() => (
+            render={(index) => (
               <ImageButton
                 focusRipple
-                key='image'
+                key={index}
               >
-                <ImageSrc style={{ backgroundImage: `url(${Banner1})` }} />
+                <ImageSrc
+                  style={{ backgroundImage: `url(${images[index - 1]})` }}
+                />
                 <ImageBackdrop className='MuiImageBackdrop-root' />
                 <ImageBase>
                   <Typography
@@ -100,7 +135,7 @@ const Home: React.FC = () => {
                     color='inherit'
                     className='MuiTypography-root'
                   >
-                    Your Text Here
+                    Shop Now
                     <ImageMarked className='MuiImageMarked-root' />
                   </Typography>
                 </ImageBase>
@@ -115,14 +150,17 @@ const Home: React.FC = () => {
         marginTop={1}
       >
         <Each
-          of={[1, 2, 3, 4, 5, 6, 6, 7, 9, 8, 88, 10]}
-          render={() => (
+          of={logos}
+          render={(logo) => (
             <Grid
               item
               md={2}
             >
               {' '}
-              <Branch />
+              <Branch
+                imageUrl={logo.imageUrl}
+                label={logo.label}
+              />
             </Grid>
           )}
         />
@@ -177,7 +215,6 @@ const Home: React.FC = () => {
       >
         <Button variant='outlined'>Xem thêm</Button>
       </Grid>
-
       <Line />
       <Typography
         textAlign={'center'}
@@ -187,7 +224,6 @@ const Home: React.FC = () => {
       >
         Sản phẩm mới
       </Typography>
-
       <Box
         sx={{ width: '100%' }}
         justifyContent={'center'}
@@ -224,7 +260,6 @@ const Home: React.FC = () => {
           Item Three
         </TabPanel> */}
       </Box>
-
       <Grid position={'relative'}>
         <Grid
           item
@@ -266,7 +301,6 @@ const Home: React.FC = () => {
       >
         <Button variant='outlined'>Xem thêm</Button>
       </Grid>
-
       <Line />
       <Typography
         textAlign={'center'}
